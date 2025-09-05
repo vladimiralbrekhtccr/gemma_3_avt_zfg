@@ -1,5 +1,9 @@
 models/
 utils/
+.vscode/
+
+.envs/
+*.jsonl
 
 
 
