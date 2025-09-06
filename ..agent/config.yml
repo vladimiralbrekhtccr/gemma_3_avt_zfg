@@ -1,0 +1,49 @@
+# Project-wide agent configuration for Codex CLI
+
+project_name: gemma_3_avt_zfg
+
+runtime:
+  language: python
+  python:
+    version: "3.12"
+
+docs:
+  mkdocs:
+    dev_addr: 127.0.0.1:8001  # use alternate port to avoid conflicts
+    include_in_nav:
+      - index.md
+      - getting-started.md
+      - training_doc.md
+      - evaluation_doc.md
+
+code_style:
+  formatter: black
+  line_length: 88
+  linter: ruff
+  typechecker: mypy
+
+commands:
+  test: "pytest -q"
+  lint: "ruff check ."
+  format: "black ."
+  typecheck: "mypy ."
+  docs_serve: "mkdocs serve -a 127.0.0.1:8001"
+  docs_build: "mkdocs build"
+
+approvals:
+  policy: on-request  # align with current environment
+  destructive_actions_require_confirmation: true
+
+conventions:
+  - Avoid unrelated changes in patches
+  - Prefer surgical diffs and clear rationales
+  - Update docs when changing behavior
+  - Do not commit secrets or tokens
+  - Ask before adding new dependencies
+
+paths:
+  docs_dir: docs
+  config_files:
+    - mkdocs.yml
+    - .agent/config.yml
+

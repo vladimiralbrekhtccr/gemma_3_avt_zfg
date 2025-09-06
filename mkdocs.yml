@@ -1,0 +1,14 @@
+site_name: gemma_3_avt_zfg
+dev_addr: 127.0.0.1:8001
+site_description: Minimal documentation site for the project.
+theme:
+  name: mkdocs
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - fenced_code
